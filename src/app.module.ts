@@ -4,7 +4,6 @@ import { ThrottlerModule } from '@nestjs/throttler';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DatabaseModule } from './database/database.module';
-import { PrismaService } from './database/prisma.service';
 import { ShortlinkModule } from './shortlink/shortlink.module';
 import { TestSessionModule } from './test-session/test-session.module';
 import { UserModule } from './user/user.module';
@@ -22,6 +21,6 @@ import { UserModule } from './user/user.module';
     ShortlinkModule,
   ],
   controllers: [AppController],
-  providers: [AppService, PrismaService],
+  providers: [AppService],
 })
 export class AppModule {}
