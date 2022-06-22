@@ -7,12 +7,10 @@ export class UserService {
   constructor(private readonly prismaService: PrismaService) {}
 
   save(userDto: CreateUserDto) {
-    const user = this.prismaService.user.upsert({
+    return this.prismaService.user.upsert({
       create: userDto,
       update: userDto,
       where: { email: userDto.email },
     });
-
-    return user;
   }
 }
