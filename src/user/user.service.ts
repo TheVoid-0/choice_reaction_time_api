@@ -13,4 +13,11 @@ export class UserService {
       where: { email: userDto.email },
     });
   }
+
+  listSessions(email: string) {
+    return this.prismaService.user.findUnique({
+      where: { email },
+      include: { sessions: true, attempts: true },
+    });
+  }
 }
