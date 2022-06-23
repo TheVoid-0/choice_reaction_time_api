@@ -38,6 +38,6 @@ export class TestSessionService {
   }
 
   async getShortlink(id: string) {
-    return this.shortlinkService.create(`${process.env.URL_WEB_TEST_SESSION}/${id}`);
+    return this.shortlinkService.create(`${process.env.URL_WEB_TEST_SESSION}?sessionId=${id}`);
   }
 }
